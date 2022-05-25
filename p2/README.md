@@ -1,46 +1,13 @@
 # Projeto 2 – Predizendo Prognóstico de Mortalidade com Dados Sintéticos
 
-O objetivo geral do projeto é montar um ou mais modelos de prognóstico que realizem a predição de mortalidade de pacientes sintéticos gerados em cenários fictícios.
-
-Para treinamento do modelo e teste de predição, devem ser usados pelo menos dois cenários de dados (scenario01 e scenario02) disponíveis no [neste endereço](https://github.com/santanche/lab2learn/tree/master/data/synthea).
-
-A equipe deve:
-1. estabelecer os parâmetros de predição, por exemplo, será predita a morte em que evento, ou quanto tempo a partir de um evento;
-2. definir quais os dados sobre o paciente que serão usados para a predição;
-3. construir modelos de aprendizagem de máquina que realizem predições;
-4. elaborar um relatório final apresentando apresentado o resultado do seu modelo de predição.
-
-Dentre as análises a serem realizadas, sugere-se:
-* analisar diferentes composições de treinamento e análise do modelo:
-  * um modelo treinado/validado no cenário 1 e testado no cenário 2 e vice-versa;
-  * um modelo treinado e validado com os dados dos dois cenários;
-  * nos modelos dos dois itens anteriores:
-    * houve diferença de resultados?
-    * como analisar e interpretar as diferenças?
-* testar diferentes composições de dados sobre o paciente para a predição (por exemplo, quantidade diversificadas de número de itens).
-
-Para a modelagem das predições podem ser usados notebooks (e.g., Jupyter) e workflows (e.g., Orange).
-
-## Instruções para o Relatório Final
-
-Segue abaixo o modelo de como deve ser documentada a entrega.
-> Tudo o que aparece neste modo de citação, ou indicado entre `<...>`, se refere a algo que deve ser substituído pelo indicado. No modelo são colocados exemplos ilustrativos, que serão substituídos pelos do seu projeto.
-
-Se o relatório for feito em um notebook, o modelo a seguir pode ser colocado dentro do notebook diretamente. Nesse caso, coloque no markdown do projeto (fora do notebook) uma cópia dos dados até a seção de `Apresentação` e um link para o notebook com o relatório.
-
-# Modelo Relatório Final de Projeto P2
-
-# Projeto Prognóstico
-# Project Prognostic
-
 # Apresentação
 
 O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação [*Ciência e Visualização de Dados em Saúde*](https://ds4h.org), oferecida no primeiro semestre de 2022, na Unicamp.
 
 |Nome  | RA | Especialização|
 |--|--|--|
-| Matheus Xavier Sampaio  | 220092  | Computação|
 | Guilherme Augusto Amorim Terrell  | 168899  | Elétrica|
+| Matheus Xavier Sampaio  | 220092  | Computação|
 
 # Contextualização da Proposta
 Analisando um conjunto de variáveis de pacientes que deram entrada em uma unidade de saúde, deseja-se construir um modelo de machine learning capaz de prever se o paciente virá a óbito em até um ano após a última vez que deu entrada.
