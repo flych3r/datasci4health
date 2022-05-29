@@ -1,0 +1,1 @@
+Arquivos adaptados de: <https://github.com/evelinag/StarWars-social-network/tree/master/data>
