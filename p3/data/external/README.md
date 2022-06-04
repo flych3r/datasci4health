@@ -1,1 +1,1 @@
-Arquivos adaptados de: <https://github.com/evelinag/StarWars-social-network/tree/master/data>
+Arquivos adaptados de: <https://bmcmedgenomics.biomedcentral.com/track/pdf/10.1186/1755-8794-4-59.pdf>

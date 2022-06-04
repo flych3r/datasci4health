@@ -1,3 +1,17 @@
+- dados
+  - rede de interações de proteínas relacionadas à inflamação e prognóstico no infarto do miocárdio (MI)
+  - conjunto de biomarcadores bem conhecidos no contexto de inflamação e prognóstico após MI como sementes
+  - explorou vários bancos de dados de interação proteína-proteína (PPI) usando as sementes como entradas de consulta
+  - rede global de PPIs no cenário de MI e inflamação  (My-Inflamome)
+- análise
+  - Esta rede foi analisada com base em diferentes características topológicas para identificar potenciais componentes críticos e sub-redes
+  - grau do nó: o número de arestas associadas a um nó
+  - tráfego: “centralidade intermediária”, é o número de caminhos mais curtos que passam pelo nó, e que ligam quaisquer dois outros nós na rede
+  - módulos de rede: uma sub-rede altamente interconectada, cujo número de conexões é maior do que o esperado ao emparelhar aleatoriamente suas proteínas
+  - correlação entre o grau do nó e o tráfego
+  - proteínas de alto tráfego
+  - 21 módulos altamente interconectados com diversos tamanhos
+
 # Projeto 3 - Reproduzindo o Experimento de um Artigo Científico
 
 O objetivo geral do projeto é reproduzir um experimento (total ou parcialmente) de um artigo científico. O tema do artigo deve estar relacionado a Ciência de Redes e Saúde. Poderão ser aceitos artigos cujos temas que tangenciam a área de saúde. Temas de artigos envolvendo ciência de redes em outros domínios deverão ser negociados previamente com os professores.
