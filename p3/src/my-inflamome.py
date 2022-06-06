@@ -24,9 +24,8 @@ if __name__ == "__main__":
     polar = nx.circular_layout(MyInflamome)
 
     print("calculando trafego e grau dos nós")
-    traffic = nx.betweenness_centrality(MyInflamome, normalized=False)
+    traffic = nx.betweenness_centrality(MyInflamome, normalized=True)
     node_degree = dict(MyInflamome.degree())
-    edge_betweenness = nx.edge_betweenness(MyInflamome, normalized=False)
 
     high_traffic_proteins = pd.DataFrame.from_dict(
         traffic, orient="index", columns=["traffic"]
@@ -57,7 +56,7 @@ if __name__ == "__main__":
 
     communities = {f'Modulo {i}': list(c) for i, c in enumerate(communities_generator, start=1)}
     with open('../data/processed/communities.json', 'w') as f:
-        json.dump(communities, f)
+        json.dump(communities, f, indent=4)
 
     plt.figure(figsize=(16, 16))
     nx.draw(MyInflamome, pos=polar, with_labels=False, node_size=100)
