@@ -37,7 +37,12 @@ Assim, a pergunta que gostaríamos de responder é a seguinte:
 
 ### Preparo e uso dos dados
 
-> TODO: Descrever brevemente o cada atributo escolhido.
+- features: características ou propriedades que, no contexto do processamento de imagens, podem ajudar na identificação e classficação da mesma. Nesse projeto trabalhamos com as seguintes features: Desvio padrão, Variância, Mediana, Moda, Skewness, Kurtosis e Entropia.
+  Tanto o desvio padrão quanto a variância fornecem uma ideia acerca da distribuição dos dados em relação á média (quanto maior o desvio padrão ou a variância, mais dispersos estarão os dados). No contexto de imagens, podemos utilizar ambas as métricas na construção de histograms que nos permitam visulizar a disperção dos valores dos pixel em relação a um valor médio. Isso pode ser útil, por exemplo, na identificação do plano de fundo da imagem.
+  A mediana é o valor que separa a lista de valores em duas metades (em outra palavras, é o valor central). Vale destacar que existem filtros de suavização de imagens que utilizam a mediana dos pixels no seu processo de tratamento da imagem.
+  A moda é o valor mais frequente de um conjuto de dados. No contexto de imagens podemos dizer que seria o valor de pixel que mais ocorre.
+  Skewness mede a falta de simetria de um certo conjunto de dados. No contexto de imagens, um skewness negativo indica que, tomando como referência o valor médio dos pixels em um histograma, haverá naquela imagem uma distribuição maior de pixels com valores abaixo da média (a calda esquerda do histograma é maior), o que indicaria que existe naquela imagem uma tonalidade mais escura. Se, por outro lado, o skewness for positivo, a calda direita (valores acima da média) será mais longa, e portanto a imagem será mais clara.
+  Kurtosis
 
 - normalização: A partir das análises aplicando diferentes normalizações nas imagens de ressonância apresentadas, decidimos não aplicar nenhum tipo de normalização, pois nenhum deles apresentou melhoras na identificação da lesão na imagem em relação a imagem original.
 - uso das máscaras: Analisando as máscaras, decidimos não aplicar a segmentação das imagens, pois os experimentos realizados não apresentaram uma melhora significativa nos resultados aplicando as mascaras.
