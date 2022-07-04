@@ -47,7 +47,7 @@ Assim, a pergunta que gostaríamos de responder é a seguinte:
   
   Skewness mede a falta de simetria de um certo conjunto de dados. No contexto de imagens, um skewness negativo indica que, tomando como referência o valor médio dos pixels em um histograma, haverá naquela imagem uma distribuição maior de pixels com valores abaixo da média (a calda esquerda do histograma é maior), o que indicaria que existe naquela imagem uma tonalidade mais escura. Se, por outro lado, o skewness for positivo, a calda direita (valores acima da média) será mais longa, e portanto a imagem será mais clara.
   
-  Kurtosis
+  Kurtosis é uma medida de achatamento de uma distribuição. Será negativa quando a distribuição dos dados em questão for mais achatada do que uma Gaussiana e positiva caso contrário. No contexto de imagens, possui aplicações na identificação de texturas. 
   
   Entropia é uma medida associada a randomicidade (aleatoriedade). No contexto de imagens a entropia pode ser utilizada na identificação de texturas an imagem, uma vez que certa textura pode ter um padrão e uma entropia associadas (por exemplo, regiões de uma imagem com baixa entropia são msis homegêneas).
 
@@ -60,7 +60,7 @@ Assim, a pergunta que gostaríamos de responder é a seguinte:
 
 ## Metodologia
 
-> TODO: Descrever brevemente o SVM e o kernel Linear.
+> TODO: SVM (Support Vector Machine): Algoritmo de aprendizagem supervisionada que identifica e classifica grupos em um conjunto de dados, seprando-os através de linhas. As características de cada grupo são mapeadas através de uma função kernel, que pode assumir 4 valores: radial, linear, polinomial e sigmoide. Cada função kernel obterá um mapeamento dos dados, e portanto cada uma delas obterá diferentes modelos de predição para um mesmo conjunto de dados.
 
 Como classificador, escolhemos o algoritmo `Support Vector Machine`, com kernel `Linear`.
 
