@@ -60,7 +60,7 @@ Assim, a pergunta que gostaríamos de responder é a seguinte:
 
 ## Metodologia
 
-> SVM (Support Vector Machine): Algoritmo de aprendizagem supervisionada que identifica e classifica grupos em um conjunto de dados, seprando-os através de linhas. As características de cada grupo são mapeadas através de uma função kernel, que pode assumir 4 valores: radial, linear, polinomial e sigmoide. Cada função kernel obterá um mapeamento dos dados, e portanto cada uma delas obterá diferentes modelos de predição para um mesmo conjunto de dados.
+> SVM (Support Vector Machine): Algoritmo de aprendizagem supervisionada que identifica e classifica grupos em um conjunto de dados, seprando-os através de linhas. As características de cada grupo são mapeadas através de uma função kernel, que pode assumir 4 valores: radial, linear, polinomial e sigmoide. Cada função kernel obterá um mapeamento diferente dos dados, e portanto cad um delas obterá um modelo de predição diferente para um mesmo conjunto de dados.
 
 Como classificador, escolhemos o algoritmo `Support Vector Machine`, com kernel `Linear`.
 
