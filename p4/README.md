@@ -37,32 +37,30 @@ Assim, a pergunta que gostaríamos de responder é a seguinte:
 
 ### Preparo e uso dos dados
 
-- features: características ou propriedades que, no contexto do processamento de imagens, podem ajudar na identificação e classficação da mesma. Nesse projeto trabalhamos com as seguintes features: Desvio padrão, Variância, Mediana, Moda, Skewness, Kurtosis e Entropia.
-
-  Tanto o desvio padrão quanto a variância fornecem uma ideia acerca da distribuição dos dados em relação á média (quanto maior o desvio padrão ou a variância, mais dispersos estarão os dados). No contexto de imagens, podemos utilizar ambas as métricas na construção de histograms que nos permitam visulizar a disperção dos valores dos pixel em relação a um valor médio. Isso pode ser útil, por exemplo, na identificação do plano de fundo da imagem.
-  
-  A mediana é o valor que separa a lista de valores em duas metades (em outra palavras, é o valor central). Vale destacar que existem filtros de suavização de imagens que utilizam a mediana dos pixels no seu processo de tratamento da imagem.
-  
-  A moda é o valor mais frequente de um conjuto de dados. No contexto de imagens podemos dizer que seria o valor de pixel que mais ocorre.
-  
-  Skewness mede a falta de simetria de um certo conjunto de dados. No contexto de imagens, um skewness negativo indica que, tomando como referência o valor médio dos pixels em um histograma, haverá naquela imagem uma distribuição maior de pixels com valores abaixo da média (a calda esquerda do histograma é maior), o que indicaria que existe naquela imagem uma tonalidade mais escura. Se, por outro lado, o skewness for positivo, a calda direita (valores acima da média) será mais longa, e portanto a imagem será mais clara.
-  
-  Kurtosis é uma medida de achatamento de uma distribuição. Será negativa quando a distribuição dos dados em questão for mais achatada do que uma Gaussiana e positiva caso contrário. No contexto de imagens, possui aplicações na identificação de texturas. 
-  
-  Entropia é uma medida associada a randomicidade (aleatoriedade). No contexto de imagens a entropia pode ser utilizada na identificação de texturas an imagem, uma vez que certa textura pode ter um padrão e uma entropia associadas (por exemplo, regiões de uma imagem com baixa entropia são msis homegêneas).
-
 - normalização: A partir das análises aplicando diferentes normalizações nas imagens de ressonância apresentadas, decidimos não aplicar nenhum tipo de normalização, pois nenhum deles apresentou melhoras na identificação da lesão na imagem em relação a imagem original.
 - uso das máscaras: Analisando as máscaras, decidimos não aplicar a segmentação das imagens, pois os experimentos realizados não apresentaram uma melhora significativa nos resultados aplicando as mascaras.
 - extração de atributos: Escolhemos 3 atributos a partir de nossos experimentos, sendo estes
-  - Estatísticas do histograma da imagem
-  - Estatísticas do histograma de textura usando o Local Binary Pattern
+  - Estatísticas do histograma da imagem: Desvio padrão, Variância, Mediana, Moda, Skewness, Kurtosis e Entropia.
+    - Tanto o desvio padrão quanto a variância fornecem uma ideia acerca da distribuição dos dados em relação á média (quanto maior o desvio padrão ou a variância, mais dispersos estarão os dados). No contexto de imagens, podemos utilizar ambas as métricas na construção de histograms que nos permitam visualizar a dispersão dos valores dos pixel em relação a um valor médio. Isso pode ser útil, por exemplo, na identificação do plano de fundo da imagem.
+
+    - A mediana é o valor que separa a lista de valores em duas metades (em outra palavras, é o valor central). Vale destacar que existem filtros de suavização de imagens que utilizam a mediana dos pixels no seu processo de tratamento da imagem.
+
+    - A moda é o valor mais frequente de um conjunto de dados. No contexto de imagens podemos dizer que seria o valor de pixel que mais ocorre.
+
+    - Skewness mede a falta de simetria de um certo conjunto de dados. No contexto de imagens, um skewness negativo indica que, tomando como referência o valor médio dos pixels em um histograma, haverá naquela imagem uma distribuição maior de pixels com valores abaixo da média (a calda esquerda do histograma é maior), o que indicaria que existe naquela imagem uma tonalidade mais escura. Se, por outro lado, o skewness for positivo, a calda direita (valores acima da média) será mais longa, e portanto a imagem será mais clara.
+
+    - Kurtosis é uma medida de achatamento de uma distribuição. Será negativa quando a distribuição dos dados em questão for mais achatada do que uma Gaussiana e positiva caso contrário. No contexto de imagens, possui aplicações na identificação de texturas.
+
+    - Entropia é uma medida associada a aleatoriedade. No contexto de imagens a entropia pode ser utilizada na identificação de texturas an imagem, uma vez que certa textura pode ter um padrão e uma entropia associadas (por exemplo, regiões de uma imagem com baixa entropia são mais homogêneas).
+
+  - Estatísticas do histograma de textura usando o Local Binary Pattern (LBP)
+    - O LBP é uma algoritmo para identificar as diferentes texturas na imagem. Utilizando este método e calculando seu histograma pode nos ajudar a identificar diferenças nas texturas entre as duas lesões.
   - Contraste da imagem
+    - Este atributo identifica as diferenças de intensidades entre os pixels próximos da imagem. Um maior contraste significa que existem alto número de variações de intensidade na imagem, o que pode ajudar a identificas as áreas da imagem com lesão.
 
 ## Metodologia
 
-> SVM (Support Vector Machine): Algoritmo de aprendizagem supervisionada que identifica e classifica grupos em um conjunto de dados, seprando-os através de linhas. As características de cada grupo são mapeadas através de uma função kernel, que pode assumir 4 valores: radial, linear, polinomial e sigmoide. Cada função kernel obterá um mapeamento diferente dos dados, e portanto cad um delas obterá um modelo de predição diferente para um mesmo conjunto de dados.
-
-Como classificador, escolhemos o algoritmo `Support Vector Machine`, com kernel `Linear`.
+Como classificador, escolhemos o algoritmo `Support Vector Machine`, com kernel `Linear`. O SVM (Support Vector Machine) e um algoritmo de aprendizagem supervisionada que identifica e classifica grupos em um conjunto de dados, separando-os através de linhas. As características de cada grupo são mapeadas através de uma função kernel, que pode assumir 4 valores: radial, linear, polinomial e sigmoide. Decidimos O kernel linear foi escolhido pois ele permite identificar qual a importância de cada atributo em sua decisão final.
 
 Os dados de treinamento foram separados de acordo com cada paciente, permitindo assim o uso de validação cruzada na avaliação durante o treinamento. Foi escolhido um $k = 5$.
 
